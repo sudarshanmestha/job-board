@@ -1,4 +1,5 @@
 from django.conf import settings
+from dj_rest_auth.views import LoginView
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
@@ -25,6 +26,8 @@ urlpatterns += [
     path("api/", include("config.api_router")),
     # DRF auth token
     path("auth-token/", obtain_auth_token),
+    path('dj-rest-auth/', include('dj_rest_auth.urls')),
+    path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls'))
 ]
 
 if settings.DEBUG:

@@ -1,10 +1,12 @@
 from django.conf import settings
+from dj_rest_auth.views import LoginView
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
 from rest_framework.authtoken.views import obtain_auth_token
+from djangojobboard.jobs.api.views import stripe_webhook
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
@@ -16,6 +18,7 @@ urlpatterns = [
     # User management
     path("users/", include("djangojobboard.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
+    path('webhooks/stripe/', stripe_webhook),
     # Your stuff: custom urls includes go here
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
@@ -25,6 +28,10 @@ urlpatterns += [
     path("api/", include("config.api_router")),
     # DRF auth token
     path("auth-token/", obtain_auth_token),
+    path('dj-rest-auth/', include('dj_rest_auth.urls')),
+    path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
+    
+    
 ]
 
 if settings.DEBUG:

@@ -203,3 +203,8 @@ sentry_sdk.init(
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+FRONTEND_URL = "https://jobs.justpython.in"
+
+CORS_ALLOWED_ORIGINS = [
+    "http://jobs.justpython.in",
+]

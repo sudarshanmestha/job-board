@@ -1,6 +1,6 @@
 const debug = process.env.NODE_ENV !== "production"
 
-const baseURL = "https://django-jobs.captain.justpython.in"
+let baseURL = "https://django-jobs.captain.justpython.in"
 const apiURL = `${baseURL}/api`
 
 if (debug) {

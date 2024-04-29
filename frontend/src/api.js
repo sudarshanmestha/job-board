@@ -1,6 +1,12 @@
-const baseURL = "http://127.0.0.1:8000"
+const debug = process.env.NODE_ENV !== "production"
+
+const baseURL = "https://django-jobs.captain.justpython.in/"
 const apiURL = `${baseURL}/api`
-//abcd
+
+if (debug) {
+    baseURL = "http://127.0.0.1:8000"
+}
+
 export const API = {
     auth: {
         login: `${baseURL}/dj-rest-auth/login/`,

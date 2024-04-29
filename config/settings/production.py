@@ -206,5 +206,5 @@ sentry_sdk.init(
 FRONTEND_URL = "https://jobs.justpython.in"
 
 CORS_ALLOWED_ORIGINS = [
-    "http://jobs.justpython.in",
+    "https://django-jobs.captain.justpython.in",
 ]

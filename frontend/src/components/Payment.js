@@ -8,7 +8,7 @@ import { useParams } from "react-router"
 import { useNavigate } from "react-router-dom"
 import CheckoutForm from "./CheckoutForm";
 
-const stripePromise = loadStripe('pk_test_51Nl8NlSHmWkafoW7YY8CoZdv2kVdwjIhmqEwj8cffzZj0OrZhydxH5oLgvlaqzkuOKuE1PuQWALKZCdcTnxbioLG00xtZ0rTFV');
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 export function Payment() {
   const [job, setJob] = useState(null)

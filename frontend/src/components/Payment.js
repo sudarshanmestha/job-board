@@ -35,6 +35,9 @@ export function Payment() {
           headers: {
             "Authorization": `Token ${token}`
           }
+        })
+        .then((res) => {
+          setJob(res.data);
         }) 
 
       } catch (e) {

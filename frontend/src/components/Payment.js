@@ -11,7 +11,7 @@ import CheckoutForm from "./CheckoutForm";
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 export function Payment() {
-  const [job, setJob] = useState(null)
+  const [job] = useState(null)
   const navigate = useNavigate()
   const [clientSecret, setClientSecret] = useState("");
   const [canSponsor, setCansponsor] = useState(false)
@@ -36,9 +36,7 @@ export function Payment() {
             "Authorization": `Token ${token}`
           }
         })
-        .then((res) => {
-          setJob(res.data);
-        }) 
+
 
       } catch (e) {
         console.log(e)

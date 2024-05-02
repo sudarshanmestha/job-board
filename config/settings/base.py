@@ -298,7 +298,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 #frontend_url
 
-FRONTEND_URL = "https://jobs.justpython.in"
+FRONTEND_URL = "https://jobs.justpython.in,https://justpython.netlify.app"
 
 STRIPE_SECRET_KEY = env("STRIPE_SECRET_KEY")
 STRIPE_WEBHOOK_SECRET = env("STRIPE_WEBHOOK_SECRET")

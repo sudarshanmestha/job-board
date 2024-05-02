@@ -207,5 +207,5 @@ FRONTEND_URL = "https://jobs.justpython.in"
 
 CORS_ALLOWED_ORIGINS = [
     "http://jobs.justpython.in",
-    "http://polite-puppy-bf16e3.netlify.app",
+    "https://justpython.netlify.app",
 ]

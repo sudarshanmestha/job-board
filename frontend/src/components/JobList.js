@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import axios from "axios"
 import { NavLink } from "react-router-dom"
 import { API } from "../api"
-import { AuthContext } from "../contexts/AuthContext"
+import { AuthContext } from "../contexts/AuthContexts"
 
 
 function JobListItem({ job }) {
